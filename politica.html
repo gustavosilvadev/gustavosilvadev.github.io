@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Gustavo J Silva">
+    <title>Allaz digital</title>
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" href="#"><span class="logo-allaz-head">Allaz </span><span class="logo-digital">digital</span></a>
+      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#services">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#contact">Contato</a>
+          </li>
+        </ul>
+        <a class="btn btn-success btn-sm" href="https://api.whatsapp.com/send?phone=5511963453094&text=Ol%C3%A1,+vim+atrav%C3%A9s+do+seu+site" target="_blank"> <span class="fs-6 text-white mx-2">Entre em contato </span><img src="assets/imgs/icon-outline-whatsapp.png" class="icon-whatsapp"/></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div id="terms" class="bg-secondary services-content flex-md-equal w-100 my-md-3 ps-md-3">
+    <h1>Política de Privacidade</h1>
+    <p>Última atualização: 5 de junho de 2025</p>
+    <p>Coletamos dados como nome, e-mail e cookies para melhorar a experiência do usuário...</p>
+  </div>
+
+</main>
+
+<footer class="container py-5">
+  <div class="row">
+    <div class="container">
+			
+      <div class="col-12 col-md d-block d-xl-flex flex-wrap align-items-center justify-content-between">
+        <p>Copyright © <span id="ano-atual"></span> Allaz Digital. Todos os direitos reservados.</p>
+        <a href="http://www.muevy.com/politica-privacidade/">Política de privacidade</a>
+      </div>
+    </div>
+
+   
+  </div>
+</footer>
+
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbarCollapse = document.getElementById('navbarCollapse');
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+          toggle: false 
+        });
+
+        const spanAno = document.getElementById("ano-atual");
+        spanAno.textContent = new Date().getFullYear();        
+    
+        function closeNavbarCollapse() {
+          if (navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+          }
+        }
+    
+
+        window.addEventListener('scroll', function() {
+          if (window.innerWidth < 768) {
+            closeNavbarCollapse();
+          }
+        });
+    
+        const navLinks = navbarCollapse.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            if (window.innerWidth < 768) {
+              closeNavbarCollapse();
+            }
+          });
+        });
+      });
+    </script>
+      
+  </body>
+</html>
